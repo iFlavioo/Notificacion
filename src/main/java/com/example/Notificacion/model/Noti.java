@@ -1,7 +1,7 @@
 package com.example.Notificacion.model;
 
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table ( name = "notificacion") 
+
 public class Noti {
     private Long idNotif;
     private Long destinatarioId; 

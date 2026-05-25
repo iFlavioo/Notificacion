@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Notificacion.service.NotiService;
 @RestController
-@RequestMapping
+@RequestMapping("/notificaciones")
 public class NotiController {
     @Autowired
     private NotiService notiService;
