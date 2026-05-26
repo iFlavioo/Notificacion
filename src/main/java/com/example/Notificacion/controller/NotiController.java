@@ -16,7 +16,6 @@ public class NotiController {
     @Autowired
     private NotiService notiService;
 
-    // POST: /api/notificaciones/email
     @PostMapping("/email")
     public ResponseEntity<String> enviarEmail(@RequestParam Long destinatarioId, 
                                             @RequestParam String tipo, 
@@ -25,7 +24,6 @@ public class NotiController {
         return ResponseEntity.ok("Email enviado y notificacion registrada.");
     }
 
-    // POST: /api/notificaciones/stock-bajo
     @PostMapping("/stock-bajo")
     public ResponseEntity<String> notificarStockBajo(@RequestParam Long adminId, 
                                                     @RequestParam Long productoId) {
@@ -33,7 +31,7 @@ public class NotiController {
         return ResponseEntity.ok("Alerta de stock bajo enviada.");
     }
 
-    // POST: /api/notificaciones/estado-envio
+
     @PostMapping("/estado-envio")
     public ResponseEntity<String> notificarEstadoEnvio(@RequestParam Long usuarioId, 
                                                     @RequestParam Long idVenta, 
@@ -42,7 +40,7 @@ public class NotiController {
         return ResponseEntity.ok("Notificación de envío actualizada.");
     }
 
-    // PUT: /api/notificaciones/leer/5
+
     @PutMapping("/leer/{idNotif}")
     public ResponseEntity<String> marcarComoLeido(@PathVariable Long idNotif) {
         boolean exito = notiService.marcarLeido(idNotif);
